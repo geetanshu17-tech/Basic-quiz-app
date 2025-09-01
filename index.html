@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -175,3 +176,179 @@
   </script>
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz App</title>
+  <link rel="stylesheet" href="style.css">  
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">Quiz App</div>
+    </div>
+    <div class="main">
+      <div class="score">
+        <h2 class="score-card">Score: 0</h2>
+      </div>
+      <div class="quiz-card">
+        <div class="question-card">
+          <div class="question-text">What is the capital of France?</div>
+          <div class="options">
+            <div class="option">
+              <input type="radio" id="berlin" name="q1" value="Berlin">
+              <label for="berlin">Berlin</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" id="madrid" name="q1" value="Madrid">
+              <label for="madrid">Madrid</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" id="paris" name="q1" value="Paris">
+              <label for="paris">Paris</label>
+            </div>
+
+            <div class="option">
+              <input type="radio" id="rome" name="q1" value="Rome">
+              <label for="rome">Rome</label>
+            </div>
+
+          </div>
+        </div>
+        <div class="question-card">
+          <div class="question-text">What is the largest planet in our solar system?</div>
+            <div class="options">
+              <div class="option">
+                <input type="radio" id="earth" name="q2" value="Earth">
+                <label for="earth">Earth</label>
+              </div>
+              <div class="option">
+                <input type="radio" id="jupiter" name="q2" value="Jupiter">
+                <label for="jupiter">Jupiter</label>
+              </div>
+              <div class="option">
+                <input type="radio" id="saturn" name="q2" value="Saturn">
+                <label for="saturn">Saturn</label>
+              </div>
+              <div class="option">
+                <input type="radio" id="mars" name="q2" value="Mars">
+                <label for="mars">Mars</label>
+              </div>
+            </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-text">What is the chemical symbol for gold?</div>
+          <div class="options">
+            <div class="option">
+              <input type="radio" id="au" name="q3" value="Au">
+              <label for="au">Au</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="ag" name="q3" value="Ag">
+              <label for="ag">Ag</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="pb" name="q3" value="Pb">
+              <label for="pb">Pb</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="fe" name="q3" value="Fe">
+              <label for="fe">Fe</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-text">Which club Leonel Messi is best known for?</div>
+          <div class="options">
+            <div class="option">
+              <input type="radio" id="barcelona" name="q4" value="Barcelona">
+              <label for="barcelona">FC Barcelona</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="psg" name="q4" value="Paris Saint-Germain">
+              <label for="psg">Paris Saint-Germain</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="man-city" name="q4" value="Manchester City">
+              <label for="man-city">Manchester City</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="bayern" name="q4" value="Bayern Munich">
+              <label for="bayern">Bayern Munich</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="question-card">
+          <div class="question-text">Which club is known as "The Red Devils"?</div>
+          <div class="options">
+            <div class="option">
+              <input type="radio" id="man-utd" name="q5" value="Manchester United">
+              <label for="man-utd">Manchester United</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="liverpool" name="q5" value="Liverpool">
+              <label for="liverpool">Liverpool</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="chelsea" name="q5" value="Chelsea">
+              <label for="chelsea">Chelsea</label>
+            </div>
+            <div class="option">
+              <input type="radio" id="arsenal" name="q5" value="Arsenal">
+              <label for="arsenal">Arsenal</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="submit">
+        <button>Submit</button>
+      </div>
+    </div>
+    <div class="footer"></div>
+  </div>
+
+  <script>
+      let quiz = [
+    { answer: "Paris" },
+    { answer: "Jupiter" },
+    { answer: "Au" },
+    { answer: "Barcelona" },
+    { answer: "Manchester United" }
+  ];
+
+    let score = 0;
+    let scoreCard = document.querySelector(".score-card");
+    let submitButton = document.querySelector(".submit button");
+    let answers = {};
+
+    document.querySelectorAll(".question-card").forEach((qCard, index) => {
+      let inputs = qCard.querySelectorAll("input[type=radio]");
+      inputs.forEach(input => {
+        input.onchange = () => {
+          answers[index] = input.value;
+        };
+      });
+    });
+
+    submitButton.onclick = () => {
+      score = 0;
+      quiz.forEach((q, i) => {
+        if (answers[i] === q.answer) score++;
+      });
+      scoreCard.textContent = "Score: " + score;
+      alert("Your Quiz is submitted");
+    };
+
+  </script>
+</body>
+</html>
+>>>>>>> 4a3ce77cac9ade5bc907c7428d4c21ecc978aef7
